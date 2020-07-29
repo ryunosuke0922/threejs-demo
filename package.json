@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx webpack-dev-server --open"
+    "start": "npx webpack-dev-server --open --mode development"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.19",
+    "three": "^0.119.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
