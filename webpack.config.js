@@ -11,8 +11,27 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|ico)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 2048,
+              name: "./images/[name].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
