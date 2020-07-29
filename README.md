@@ -1,8 +1,8 @@
 # hudson
 
-three.js example
+three.js
 
-![three.js example](https://github.com/ryunosuke0922/hudson/blob/images/tmp/img_01.png)
+![three.js](https://github.com/ryunosuke0922/hudson/blob/images/tmp/img_01.png)
 
 install
 
