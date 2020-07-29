@@ -1,0 +1,32 @@
+{
+  "name": "hudson",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx webpack-dev-server --open --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryunosuke0922/hudson.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryunosuke0922/hudson/issues"
+  },
+  "homepage": "https://github.com/ryunosuke0922/hudson#readme",
+  "devDependencies": {
+    "css-loader": "^4.1.0",
+    "live-server": "^1.2.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "lodash": "^4.17.19",
+    "three": "^0.119.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

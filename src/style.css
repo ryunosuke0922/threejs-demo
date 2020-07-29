@@ -1,0 +1,15 @@
+body {
+  background-color: #333;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 2em;
+  letter-spacing: 0.05em;
+  font-family: sans-serif;
+  font-weight: bold;
+}
