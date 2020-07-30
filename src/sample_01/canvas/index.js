@@ -1,4 +1,6 @@
 import * as THREE from "three";
+import img01 from "../../../asset/01.png";
+import img02 from "../../../asset/02.png";
 
 export default class Canvas {
   constructor() {
@@ -15,42 +17,64 @@ export default class Canvas {
     const container = document.getElementById("canvas-container");
     container.appendChild(this.renderer.domElement);
 
-    const fov = 60;
-    const fovRad = (fov / 2) * (Math.PI / 180); // 視野角をラジアンに変換
-    const dist = this.h / 2 / Math.tan(fovRad); // ウィンドウぴったりのカメラ距離
-
-    // カメラを作成 (視野角, 画面のアスペクト比, カメラに映る最短距離, カメラに映る最遠距離)
-    this.camera = new THREE.PerspectiveCamera(
-      fov,
-      this.w / this.h,
-      1,
-      dist * 2
-    );
-    this.camera.position.z = dist; // カメラを遠ざける
+    this.camera = new THREE.PerspectiveCamera(45, this.w / this.h, 1, 10000);
+    // カメラの位置（z軸をプラスが手前？多分）
+    this.camera.position.set(0, 0, +1000);
 
     // シーンを作成
     this.scene = new THREE.Scene();
 
-    // ライトを作成
-    this.light = new THREE.PointLight(0x00ffff);
-    this.light.position.set(0, 0, 400); // ライトの位置を設定
-
-    // ライトをシーンに追加
-    this.scene.add(this.light);
-
-    // 立方体のジオメトリを作成(幅, 高さ, 奥行き)
-    const geo = new THREE.BoxGeometry(300, 300, 300);
-
-    // マテリアルを作成
-    const mat = new THREE.MeshLambertMaterial({ color: 0xffffff });
-
-    // ジオメトリとマテリアルからメッシュを作成
-    this.mesh = new THREE.Mesh(geo, mat);
-    this.mesh.rotation.x = THREE.Math.DEG2RAD * 45;
-    this.mesh.rotation.y = THREE.Math.DEG2RAD * 45;
-
     // メッシュをシーンに追加
-    this.scene.add(this.mesh);
+    // this.scene.add(this.mesh);
+
+    // ロード用のオブジェクトを作成
+    const loader = new THREE.TextureLoader();
+    // テクスチャ画像を読み込む
+    const texture = loader.load(img01); // テクスチャのパス
+    // テクスチャをマテリアルに設定
+    const material = new THREE.MeshBasicMaterial({
+      map: texture,
+      alphaTest: 0.2,
+    });
+
+    // ジオメトリを作って、マテリアル設定して、シーンに追加
+    const geometry1 = new THREE.PlaneGeometry(94, 56, 1, 0);
+    const polygon = new THREE.Mesh(geometry1, material);
+    polygon.position.set(40, 23, 0);
+
+    this.scene.add(polygon);
+
+    const polygon2 = new THREE.Mesh(geometry1, material);
+    polygon2.position.set(0, 0, 0);
+
+    this.scene.add(polygon2);
+
+    const texture2 = loader.load(img02); // テクスチャのパス
+    // テクスチャをマテリアルに設定
+    const material2 = new THREE.MeshBasicMaterial({
+      map: texture2,
+      alphaTest: 0.2,
+    });
+
+    const geometry3 = new THREE.PlaneGeometry(46, 98, 1, 0);
+    const polygon3 = new THREE.Mesh(geometry3, material2);
+    polygon3.position.set(30, 0, 0);
+
+    this.scene.add(polygon3);
+
+    const geometry4 = new THREE.PlaneGeometry(46, 98, 1, 0);
+    const polygon4 = new THREE.Mesh(geometry4, material2);
+    polygon4.position.set(-55, 50, 0);
+
+    this.scene.add(polygon4);
+
+    // DirectionalLightは平行光源
+    // ライトもシーンに追加することで反映されます。
+    const directionalLight = new THREE.DirectionalLight(0xffffff);
+
+    // 光源が斜めから差し込むように位置を変更
+    directionalLight.position.set(1, 1, 1);
+    this.scene.add(directionalLight);
 
     // マウス座標
     this.mouse = new THREE.Vector2(0, 0);
@@ -66,11 +90,6 @@ export default class Canvas {
     });
 
     // ミリ秒から秒に変換
-    const sec = performance.now() / 1000;
-
-    // 1秒で45°回転する
-    this.mesh.rotation.x = sec * (Math.PI / 4);
-    this.mesh.rotation.y = sec * (Math.PI / 4);
 
     // 画面に表示
     this.renderer.render(this.scene, this.camera);
