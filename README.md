@@ -1,6 +1,6 @@
 # hudson
 
-TypeScript + Three.js + Webpack のテンププレート
+TypeScript + Three.js + Webpack template
 
 Three.js
 
