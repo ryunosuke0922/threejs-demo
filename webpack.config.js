@@ -3,7 +3,9 @@ const path = require("path");
 const outputPath = path.resolve(__dirname, "dist");
 
 module.exports = {
-  entry: "./src/index.js",
+  mode: "development",
+
+  entry: "./src/index.ts",
   output: {
     filename: "main.js",
     path: outputPath,
@@ -11,10 +13,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: "ts-loader",
         },
       },
       {
@@ -34,6 +36,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: [".ts", ".js"],
   },
   devServer: {
     contentBase: outputPath,

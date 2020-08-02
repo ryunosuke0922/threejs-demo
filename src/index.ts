@@ -1,6 +1,6 @@
-import Sample01 from "./sample_01";
+import Sample from "./sample";
 import "./style.css";
 
 document.addEventListener("DOMContentLoaded", () => {
-  new Sample01();
+  new Sample();
 });
