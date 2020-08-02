@@ -1,8 +1,10 @@
 # hudson
 
-three.js
+TypeScript + Three.js + Webpack のテンププレート
 
-![three.js](https://github.com/ryunosuke0922/hudson/blob/images/tmp/img_01.png)
+Three.js
+
+![Three.js](https://github.com/ryunosuke0922/hudson/blob/images/tmp/img_01.png)
 
 install
 
