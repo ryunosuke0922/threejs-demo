@@ -7,5 +7,13 @@ export default class Sample01 {
     window.addEventListener("mousemove", (e) => {
       canvas.mouseMoved(e.clientX, e.clientY);
     });
+
+    window.addEventListener(
+      "resize",
+      () => {
+        canvas.onWindowResize();
+      },
+      false
+    );
   }
 }

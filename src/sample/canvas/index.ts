@@ -1,6 +1,15 @@
 import * as THREE from "three";
 
 export default class Canvas {
+  w: any;
+  h: any;
+  renderer: any;
+  camera: any;
+  scene: any;
+  light: any;
+  mesh: any;
+  mouse: any;
+
   constructor() {
     // ウィンドウサイズ
     this.w = window.innerWidth;
@@ -46,8 +55,6 @@ export default class Canvas {
 
     // ジオメトリとマテリアルからメッシュを作成
     this.mesh = new THREE.Mesh(geo, mat);
-    this.mesh.rotation.x = THREE.Math.DEG2RAD * 45;
-    this.mesh.rotation.y = THREE.Math.DEG2RAD * 45;
 
     // メッシュをシーンに追加
     this.scene.add(this.mesh);
@@ -74,6 +81,13 @@ export default class Canvas {
 
     // 画面に表示
     this.renderer.render(this.scene, this.camera);
+  }
+
+  onWindowResize() {
+    this.camera.aspect = window.innerWidth / window.innerHeight;
+    this.camera.updateProjectionMatrix();
+
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
   }
 
   mouseMoved(x, y) {
