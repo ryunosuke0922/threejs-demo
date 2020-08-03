@@ -4,10 +4,6 @@ export default class Sample {
   constructor() {
     const canvas = new Canvas();
 
-    window.addEventListener("mousemove", (e) => {
-      canvas.mouseMoved(e.clientX, e.clientY);
-    });
-
     window.addEventListener(
       "resize",
       () => {
@@ -15,5 +11,17 @@ export default class Sample {
       },
       false
     );
+
+    window.addEventListener("mousemove", (e) => {
+      canvas.onDocumentMouseMove(e);
+    });
+
+    window.addEventListener("touchstart", (e) => {
+      canvas.onDocumentTouchStart(e);
+    });
+
+    window.addEventListener("touchmove", (e) => {
+      canvas.onDocumentTouchMove(e);
+    });
   }
 }
