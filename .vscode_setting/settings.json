@@ -1,0 +1,47 @@
+{
+  "editor.renderControlCharacters": true, // 制御文字を表示する
+  "editor.renderWhitespace": "boundary", // 空白文字を表示する
+  "editor.renderLineHighlight": "all", // カーソル行を強調する
+  "editor.cursorBlinking": "phase", // カーソルを点滅させる
+
+  "editor.showFoldingControls": "always", // 行の折りたたみ記号を常に表示する
+  "editor.minimap.maxColumn": 40, // ミニマップの幅を40文字分に設定する
+  "editor.minimap.showSlider": "always", // ミニマップ上にスライダーを常に表示するようにする
+  "editor.dragAndDrop": false, // ドラッグアンドドロップでコードの移動をしないようにする
+
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#049ef4",
+    "titleBar.activeForeground": "#000000",
+    "activityBar.background": "#049ef4",
+    "activityBar.foreground": "#000000"
+  },
+
+  "files.eol": "\n", // 改行文字を\nにする
+  "files.autoGuessEncoding": true, // 文字コードを自動的に判別する
+  "files.insertFinalNewline": true, // 保存時にファイルの最後に空行を挿入する
+  "files.trimFinalNewlines": true, // 保存時にファイルの最後に存在する空行を削除する
+  "files.trimTrailingWhitespace": true, // 保存時に行の終端に存在する空白文字を削除する
+
+  "workbench.editor.tabCloseButton": "left", // タブを閉じるボタンをタブ左側に表示する
+  "workbench.startupEditor": "none", // vscode起動時に「ようこそ」画面を表示しないようにする
+
+  "[javascript]": {
+    "editor.tabSize": 2
+  },
+  "[javascriptreact]": {
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.tabSize": 2
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "files.trimTrailingWhitespace": false
+  },
+  "[typescript]": {
+    "editor.tabSize": 2
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2
+  }
+}
