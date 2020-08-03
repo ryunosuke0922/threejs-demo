@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import Stats from "three/examples/jsm/libs/stats.module";
 
-import image from "../../images/disc.png";
+import image from "../../images/points_billboards/disc.png";
 
 export default class Canvas {
   camera: any;
@@ -68,28 +68,16 @@ export default class Canvas {
     var particles = new THREE.Points(geometry, this.material);
     this.scene.add(particles);
 
-    //
-
     this.renderer = new THREE.WebGLRenderer();
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
-    //
-
+    // fps
     this.stats = Stats();
     document.body.appendChild(this.stats.dom);
-
-    //
-
-    document.addEventListener("mousemove", this.onDocumentMouseMove, false);
-    document.addEventListener("touchstart", this.onDocumentTouchStart, false);
-    document.addEventListener("touchmove", this.onDocumentTouchMove, false);
-
-    //
-
-    window.addEventListener("resize", this.onWindowResize, false);
   }
+
   animate() {
     requestAnimationFrame(() => {
       this.animate();

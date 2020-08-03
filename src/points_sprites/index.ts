@@ -1,6 +1,6 @@
 import Canvas from "./canvas";
 
-export default class Sample {
+export default class PointsSprites {
   constructor() {
     const canvas = new Canvas();
 
