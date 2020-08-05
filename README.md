@@ -4,7 +4,7 @@ TypeScript + Three.js + Webpack template
 
 Three.js
 
-![Three.js](https://github.com/ryunosuke0922/hudson/blob/images/tmp/img_01.png)
+![example](https://github.com/ryunosuke0922/hudson/blob/images/tmp/gif_02.gif)
 
 install
 
