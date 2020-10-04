@@ -19,9 +19,3 @@ npm run start
 ```
 
 http://localhost:8080/
-
-vscode sample
-
-```terminal
-cp -r .vscode_setting .vscode
-```
