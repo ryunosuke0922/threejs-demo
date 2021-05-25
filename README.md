@@ -9,13 +9,13 @@ Three.js
 install
 
 ```terminal
-npm install
+yarn
 ```
 
 start webpack-dev-server
 
 ```terminal
-npm run start
+yarn start
 ```
 
 http://localhost:8080/
