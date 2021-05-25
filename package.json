@@ -29,7 +29,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "three": "^0.119.0",
+    "three": "^0.125.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
